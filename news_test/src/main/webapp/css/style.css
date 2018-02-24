@@ -1,0 +1,387 @@
+body,div,h1,form,table,ul,li,p{
+	border:0;
+	margin:0;
+	padding:0;
+}
+
+.admin .title,.left-menu .title{
+	font-size:20px;
+	line-height:50px;
+	border-bottom:1px solid #ddd;
+	padding-left:15px;
+	height:50px;
+}
+.left-menu .title{
+	font-size:16px;
+}
+form{
+	padding:15px;
+}
+.btn,.back-btn{
+	display:inline-block;
+	padding:3px;
+	text-decoration:none;
+	color:#fff;
+	background:#c30;
+	font-size:13px;
+}
+.back-btn{
+	height:25px;
+	line-height:25px;
+	float:right;
+	margin-top:10px;
+	margin-right:10px;
+}
+.btn:hover,.back-btn:hover{
+	background:#FF8000;
+}
+.err{
+	color:#c30;
+}
+.success{
+	color:green;
+}
+.admin .tab{
+	border:0;
+	margin:15px;
+	width:90%;
+}
+.admin .tab td{
+	border-bottom:1px solid #ddd;
+	padding:5px;
+}
+.text-center{
+	text-align:center;
+}
+.top{
+	padding:15px;
+	background:#3D7878;
+}
+.top h1{
+	color:#fff;
+	font-size:32px;
+	font-family:"Microsoft Yahei","黑体";
+	font-weight:700;
+	height:40px;
+}
+.left-menu{
+	width:120px;
+	height:580px;
+	border-right:1px solid #ddd;
+	float:left;
+}
+.right{
+	float:left;
+	width:877px;
+}
+.main-frame{
+	width:1000px;
+	margin:0 auto;
+	border-left:1px solid #ddd;
+	border-right:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	height:650px;
+}
+.left-menu ul,.left-menu li{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+.left-menu a{
+	hegiht:32px;
+	padding:5px;
+	display:block;
+	margin:0;
+	border-bottom:1px dotted #ddd;
+	text-align:center;
+	text-decoration:none;
+	color:#333;
+}
+.left-menu a:hover{
+	background:#ccc;
+}
+ .footer{
+	clear:both;
+	padding-top:5px;
+} 
+.footer p{
+	text-align:center;
+	color:#666;
+	font-size:13px;
+	padding:15px;
+}
+.welcome{
+	font-size:30px;
+	font-family:"Microsoft YaHei","黑体";
+	font-weight:700;
+	text-align:center;
+	padding-top:100px;
+}
+.login-title{
+	font-size:30px;
+	font-family:"Microsoft YaHei","黑体";
+	font-weight:700;
+	padding:15px 15px 0 0;
+	border-bottom:1px solid #ddd;
+	width:980px;
+	margin:0 auto;
+}
+.login-title small{
+	font-size:20px;
+	color:#666;
+	margin-left:35px;
+}
+.login-main{
+}
+.login-main .login-box{
+	width:980px;
+	height:400px;
+	background:url(http://mcs.gznc.edu.cn/index_files/main.gif) no-repeat ;
+	margin:15px auto;
+}
+.login-main .login-box .box{
+	height:370px;
+	width:250px;
+	background:#fff;
+	float:right;
+	margin:15px 40px;
+}
+.login-main .login-box .box h2{
+	font-size:20px;
+	font-family:"Microsoft YaHei","黑体";
+	font-weight:700;
+	padding:15px;
+	border-bottom:1px solid #ddd;
+}
+.login-main .login-box .box label{
+	display:inline-block;
+	padding:10px;
+}
+.login-main .login-box .box input{
+	display:inline-block;
+	padding:5px;
+	width:145px;
+}
+.login-main .login-box .box .btn{
+	margin:10px;
+	background:#c30;
+	display:block;
+	text-align:center;
+	color:#fff;
+	padding:6px;
+	font-size:16px;
+	border-radius:4px;
+}
+.login-main .login-box .box .btn:hover{
+	background:#c39;
+}
+.login-main .login-box .box .msg{
+	color:#c30;
+	padding:15px;
+	font-size:13px;
+}
+.win-box{
+	border:2px solid #ddd;
+	width:550px;
+	position:absolute;
+	top:100px;
+	left:500px;
+	background:#fff;
+	padding:0;
+	border-radius:5px;
+	display:none;
+}
+.win-box .win-title{
+	height:30px;
+	line-height:30px;
+	font-size:16px;
+	background:#ddd;
+	padding:0;
+	margin:0;
+}
+.win-box .win-title span{
+	display:block;
+	height:20px;
+	width:20px;
+	background:#c30;
+	color:#fff;
+	line-height:20px;
+	text-align:center;
+	border-radius:10px;
+	float:right;
+	margin-top:3px;
+	margin-right:3px;
+	font-size:14px;
+	cursor:pointer;
+}
+.win-box iframe{
+	width:546px;
+	height:380px;
+	border:0;
+}
+.page{
+	text-align:center;
+	clear:both;
+}
+.page span,.page a{
+	margin-right:20px;
+	font-size:13px;
+	color:#555;
+	text-decoration:none;
+}
+/*前台CSS*/
+.w{
+	width:980px;
+	margin:0 auto;
+}
+.top-box{
+	height:100px;
+}
+.top-box .sys-logo{
+	font-size:30px;
+	font-family:'Microsoft YaHei';
+	font-weight:700;
+	line-height:100px;
+	padding-left:20px;
+	width:500px;
+	float:left;
+}
+.top-box form{
+	height:100px;
+	line-height:100px;
+	width:400px;
+	float:right;
+	margin:0;
+	padding:0;
+}
+.nav-box{
+	height:35px;
+	background:#005AB5;
+}
+.nav-box ul li a{
+	color:#fff;
+	text-decoration:none;
+	padding:5px 20px;
+}
+.nav-box ul li a:hover{
+	font-size:16px;
+	color: #FFD306;
+}
+.nav-box ul{
+	height:35px;
+	padding:0;
+}
+.nav-box ul li{
+	float:left;
+	list-style:none;
+	line-height:35px;
+}
+.nav-box ul li.active{
+	background:#2894FF;
+}
+.index-main-box{
+	margin:15px auto;
+}
+.index-main-box .panel{
+	width:490px;
+	float:left;
+	height:300px;
+}
+.index-main-box .panel div{
+	margin:5px;
+	background:#fff;
+}
+.index-main-box .panel div h2,.left-box h2,.right-box h2{
+	font-size:14px;
+	height:35px;
+	line-height:35px;
+	margin:0 0 5px 0;
+	padding:0;
+	border-bottom:1px solid #666;
+	
+}
+.index-main-box .panel div h2 .more{
+	float:right;
+	font-size:12px;
+	text-decoration:none;
+	margin-right:15px;
+	color:#333;
+}
+.index-main-box .panel div ul,.index-main-box .panel div li,.left-box ul,.left-box li,.right-box ul,.right-box li{
+	list-style:none;
+}
+.index-main-box .panel div li,.left-box ul,.left-box li,.right-box ul,.right-box li{
+	height:25px;
+	line-height:25px;
+	position:relative;
+}
+.index-main-box .panel div li a,.left-box li a,.right-box li a{
+	font-size:14px;
+	display:block;
+	line-height:25px;
+	width:380px;
+	overflow:hidden;
+	text-decoration:none;
+	color:#333;
+	text-overflow:ellipsis;	/*显示省略符号来代表被修剪的文本。*/
+	white-space:nowrap;		/*规定段落中的文本不进行换行*/
+}
+.left-box li a,.right-box li a{
+	width:238px;
+	padding-left:10px;
+}
+.right-box li a{
+	width:600px;
+}
+.index-main-box .panel div li span,.right-box li span{
+	font-size:14px;
+	width:100px;
+	position:absolute;
+	display:block;
+	height:25px;
+	line-height:25px;
+	top:0;
+	right:0;
+	text-align:right;
+}
+.right-box li span{
+	right:10px;
+}
+.left-box,.right-box{
+	height:330px;
+	float:left;
+	margin:15px 0;
+	border:1px solid #999;
+}
+.left-box{
+	width:250px;
+}
+.right-box{
+	width:716px;
+	float:right;
+	position:relative;
+}
+.right-box .page{
+	position:absolute;
+	width:716px;
+	bottom:10px;
+	left:0;
+}
+.title{
+	font-size:16px;
+	text-align:center;
+	padding:15px 0;
+	border-bottom:1px solid #ccc;
+}
+.date{
+	text-align:center;
+	color:#888;
+	font-size:13px;
+	padding:10px 0;
+}
+.content{
+	overflow-x:hiden;
+}
+.col{
+	display:none;
+}
