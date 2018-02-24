@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhou.product.dao.ManagerDao">
+	<!-- 根据管理员的姓名查询管理员信息 -->
+	<select id="queryManagerByName" resultType="manager">
+		select * from manager where manager_name=#{username}
+	</select>
+	<!-- 查询全部管理员信息 -->
+	<select id="queryManagerByPage" resultType="manager">
+		select * from manager limit #{startIndex},#{pageSize}
+	</select>
+	<!-- 查询管理员数量 -->
+	<select id="queryManagerCount" resultType="java.lang.Integer">
+		select count(*) from manager
+	</select>
+	<!-- 删除对应管理员信息 -->
+	<delete id="deleteManagerById">
+		delete from manager where manager_id=#{id}
+	</delete>
+	<!-- 新增管理员 -->
+	<insert id="addManager" parameterType="manager">
+		insert into manager
+		values(
+			#{manager_id},
+			#{manager_name},
+			#{manager_pwd}
+		)
+	</insert>
+	<!-- 修改管理员信息 -->
+	<update id="updateManager" parameterType="manager">
+		update manager 
+		set 
+			manager_name=#{manager_name}
+		where
+			manager_id=#{manager_id}
+	</update>
+	
+	<!-- 根据id查询管理员信息 -->
+	<select id="queryManagerById" resultType="manager">
+		select * from manager where manager_id=#{id}
+	</select>
+</mapper>

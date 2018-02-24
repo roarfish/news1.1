@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhou.product.dao.NavDao">
+	<!-- 查询全部分类信息 -->
+	<select id="queryNavByPage" resultType="nav">
+		select * from nav limit #{startIndex},#{pageSize}
+	</select>
+	<!-- 查询分类数量 -->
+	<select id="queryNavCount" resultType="java.lang.Integer">
+		select count(*) from nav
+	</select>
+	<!-- 查询全部分类名称 -->
+	<select id="doQueryAllNavName" resultType="nav">
+		select nav_id, nav_name from nav
+	</select>
+	<!-- 删除对应分类信息 -->
+	<delete id="deleteNavById">
+		delete from nav where nav_id=#{id}
+	</delete>
+	<!-- 新增分类 -->
+	<insert id="addNav" parameterType="Nav">
+		insert into nav
+		values(
+			#{nav_id},
+			#{nav_name},
+			#{nav_feight}
+		)
+	</insert>
+	<!-- 修改分类信息 -->
+	<update id="updateNav" parameterType="Nav">
+		update nav 
+		set 
+			nav_name=#{nav_name},
+			nav_feight=#{nav_feight}
+		where
+			nav_id=#{nav_id}
+	</update>
+	<!-- 根据id查询分类信息 -->
+	<select id="queryNavById" resultType="Nav">
+		select * from nav where nav_id=#{id}
+	</select>
+</mapper>

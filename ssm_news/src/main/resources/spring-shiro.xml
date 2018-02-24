@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+	
+	
+	<!-- ====================================自定义Realm===================================== -->
+	<bean id="shiroUserRealm" class="com.zhou.common.service.impl.ShiroRealm"></bean> 
+	
+	<!-- ====================================配置shiro安全管理器===================================== -->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+       	<!-- 自定义登录与授权 -->
+       	<property name="realm" ref="shiroUserRealm"/>
+    </bean>
+	
+	
+	<!-- ====================================shiro工厂bean配置===================================== -->
+	<bean id="ShiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+			<!-- shiro的核心安全接口 -->
+       		<property name="securityManager" ref="securityManager"/>
+       		 <!-- 要求登录时的连接 -->
+       		<property name="loginUrl" value="/loginUI.do"/>
+       		 <!-- shiro连接约束配置 -->
+       		<property name="filterChainDefinitions">
+             <value>
+                 <!-- 对静态资源设置允许匿名访问 -->
+                 /images/** = anon
+                 /js/** = anon
+                 /css/** = anon
+                 /static/** = anon
+                 /jquery/** = anon
+                 /index = anon
+                 <!-- 可匿名访问路径，例如：验证码、登录连接、退出连接等 -->
+                 /login.do = anon
+                 <!-- 退出 -->
+                 /logout.do = logout  <!-- 会调用Subject的logout方法,此方法会将session清空 -->
+                 <!-- 剩余其他路径，必须认证通过才可以访问 -->
+                 /** = authc
+             </value>
+         	</property>
+	</bean>
+	
+	
+</beans>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
+		
+		<!-- 导入配置文件config -->
+		<util:properties id="cfg" location="classpath:config.properties"/>
+		<!--配置DruidDataSource连接池 -->
+		<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+			<property name="driverClassName" value="#{cfg.driver}"/>
+			<property name="url" value="#{cfg.url}"/>
+			<property name="username" value="#{cfg.username}"/>
+			<property name="password" value="#{cfg.password}" />
+			<!-- 初始化连接大小 -->
+			<property name="initialSize" value="#{cfg.initialSize}" />
+			<!-- 连接池最大数量 -->
+			<property name="maxActive" value="#{cfg.maxActive}" />
+			<!-- 连接池最小空闲 -->
+			<property name="minIdle" value="#{cfg.minIdle}" />
+			<!-- 获取连接最大等待时间 -->
+			<property name="maxWait" value="#{cfg.maxWait}" />
+		</bean>
+		<!-- 配置sqlSession工厂 -->
+		<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+			<!-- 配置连接池属性 -->
+			<property name="dataSource" ref="dataSource"/>
+			<!-- 配置工厂的一些配置文件 -->
+			<property name="configLocation" value="classpath:mybatis-config.xml"/>
+			<!-- 自动扫描mapping.xml文件 -->
+			<property name="mapperLocations" >
+				<list>
+					<value>classpath:mapper/*.xml</value>
+				</list>
+			</property>
+		</bean>
+		<!-- Mapper接口所在包，Spring会自动查找其下的Mapper -->
+		<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+			<property name="basePackage" value="com.zhou.**.dao "/>
+		</bean>
+		
+</beans>

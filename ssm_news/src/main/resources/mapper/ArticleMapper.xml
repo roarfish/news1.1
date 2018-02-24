@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhou.product.dao.ArticleDao">
+	<!-- 查询新闻相关信息 -->
+	<select id="queryArticle" resultType="articlePojo">
+		select 
+			a.*,n.*
+		from
+			article a,nav n
+		where
+			a.nav_id = n.nav_id
+		<if test='nav_id!=null and nav_id!=""'>
+			and a.nav_id = #{nav_id}
+		</if>
+		<if test='article_title!=null and article_title!=""'>
+			and a.article_title like concat("%",#{article_title},"%")
+		</if>
+		limit 
+			#{startIndex},#{pageSize}
+	</select>
+	<!-- 查询新闻数量 -->
+	<select id="queryArticleCount" resultType="java.lang.Integer">
+		select 
+			count(*)
+		from
+			article a,nav n
+		where
+			a.nav_id = n.nav_id
+	</select>
+	<!-- 删除文章信息 -->
+	<delete id="deleteArticleById">
+		delete from article where article_id=#{article_id}
+	</delete>
+	<!-- 新增新闻 -->
+	<insert id="addArticle" parameterType="article">
+		insert into article
+		values(
+			#{article_id},
+			#{article_title},
+			#{article_date},
+			#{article_content},
+			#{nav_id}
+		)
+	</insert>
+	<!-- 修改新闻信息 -->
+	<update id="updateArticle" parameterType="article">
+		update Article 
+		set 
+			article_title=#{article_title},
+			article_date=#{article_date},
+			article_content=#{article_content},
+			nav_id=#{nav_id}
+		where
+			article_id=#{article_id}
+	</update>
+	
+	<!-- 根据id查询新闻信息 -->
+	<select id="queryArticleById" resultType="article">
+		select * from article where article_id=#{id}
+	</select>
+</mapper>
